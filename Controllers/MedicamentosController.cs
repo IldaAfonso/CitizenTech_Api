@@ -13,7 +13,7 @@ public class MedicamentosController : CrudController<Medicamento>
 
     protected override async Task<string> ValidarRelacionamentos(Medicamento med)
     {
-          if (await Db.Idosos.CountAsync(i => i.Id == med.IdosoId) == 0)
+            if (await Db.Idosos.CountAsync(i => i.Id == med.IdosoId) == 0)
             return $"Idoso com id {med.IdosoId} não existe.";
         return null;
     }
