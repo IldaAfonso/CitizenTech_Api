@@ -13,7 +13,7 @@ public class IdososController : CrudController<Idoso>
 
     protected override async Task<string> ValidarRelacionamentos(Idoso idoso)
     {
-               if (await Db.Cuidadores.CountAsync(c => c.Id == idoso.CuidadorId) == 0)
+         if (await Db.Cuidadores.CountAsync(c => c.Id == idoso.CuidadorId) == 0)
             return $"Cuidador com id {idoso.CuidadorId} não existe.";
         return null;
     }
