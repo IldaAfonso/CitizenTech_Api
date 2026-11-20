@@ -13,11 +13,11 @@ public class EventosController : CrudController<Evento>
 
     protected override async Task<string> ValidarRelacionamentos(Evento ev)
     {
-        if (!await Db.Idosos.AnyAsync(i => i.Id == ev.IdosoId))
+           if (await Db.Idosos.CountAsync(i => i.Id == ev.IdosoId) == 0)
             return $"Idoso com id {ev.IdosoId} não existe.";
 
         if (ev.MedicamentoId.HasValue &&
-            !await Db.Medicamentos.AnyAsync(m => m.Id == ev.MedicamentoId && m.IdosoId == ev.IdosoId))
+             await Db.Medicamentos.CountAsync(m => m.Id == ev.MedicamentoId && m.IdosoId == ev.IdosoId) == 0)
             return $"Medicamento {ev.MedicamentoId} não existe ou não pertence ao idoso {ev.IdosoId}.";
 
         return null;
