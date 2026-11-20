@@ -3,7 +3,7 @@
 API REST em **ASP.NET Core 8** com **Entity Framework Core** e **Oracle** (oracle.fiap.com.br), da Global Solution 2026/2 da FIAP (disciplina Advanced Business Development with .NET).
 
 ## Integrantes
-| Ilda Ester Mussungayi Afonso | RM:568233 |
+| Ilda Ester Mussungayi Afonso | RM:568233 | Turma: 2TDPSA
 
 
 ## Solução
@@ -87,5 +87,3 @@ curl -i http://localhost:5000/api/cuidadores/9999                               
 
 Cada recurso tem: `GET` (lista), `GET /{id}`, `POST` (201), `PUT /{id}` (204) e `DELETE /{id}` (204). Dado inválido devolve **400** em JSON; id inexistente devolve **404**; excluir registro com dependentes devolve **409**.
 
-## Uso de IA generativa
-Declaração: (preencher com as ferramentas usadas e para quê. Exemplo: Claude, para gerar o esqueleto do projeto e revisar o README; todo o código foi lido, entendido e testado pelo autor.)
